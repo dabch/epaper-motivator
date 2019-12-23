@@ -3,9 +3,9 @@
 #include <avr/sleep.h>
 //#include <Adafruit_EPD.h>
 
-#include "compliments.h"
-#include "epd_display.h"
-#include "rtc_alarm.h"
+#include "src/compliments.h"
+#include "src/epd_display.h"
+#include "src/rtc_alarm.h"
 
 int compliment_index = 0;
 
