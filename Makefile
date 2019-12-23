@@ -1,7 +1,12 @@
 upload: compile
-	arduino-cli upload -b arduino:avr:pro -p /dev/ttyUSB1 -i lea-motivator.ino.arduino.avr.pro.with_bootloader.hex
+	arduino-cli upload -b arduino:avr:pro -p /dev/ttyUSB1 -i build/sketch.hex
 
-compile: lea-motivator.ino src/*
-	arduino-cli compile -b arduino:avr:pro lea-motivator.ino
+compile: src/*
+	[ -d build ] || mkdir -p build
+	arduino-cli compile -b arduino:avr:pro -o build/sketch.hex src/lea-motivator.cpp
+
+
+clean:
+	rm -r build
 
     
