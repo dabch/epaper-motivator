@@ -17,7 +17,7 @@ void setup()
     init_rtc();
     init_display();
    
-    display_stream("\x05""He\x01""ll\x02""o World\x04\n\x02Obi\x01 stinkt!\n\x03(Ehsan 2019)\x04\nLeft\x03Right\x04\n\x05""Center\x04\nbottom");
+    display_stream("\x05""He\x01""ll\x02""o World\x04\n\x02Obi\x01 was geht?!\n\x03(Ehsan 2019)\x04\nLeft\x03Right\x04\n\x05""Center\x04\nbottom");
 }
 
 
