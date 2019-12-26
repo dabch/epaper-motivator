@@ -14,7 +14,7 @@ void init_rtc() {
     RTC.alarmInterrupt(ALARM_2, false);
     RTC.squareWave(SQWAVE_NONE);
 
-    RTC.get();
+    setSyncProvider(RTC.get);
     Serial << "RTC Sync";
     if (timeStatus() != timeSet)
     {
@@ -23,21 +23,19 @@ void init_rtc() {
     Serial << endl;
 
     printDateTime(RTC.get());
-    Serial << " --> Current RTC time\n";
+    Serial << " --> Current RTC time: " << now() << endl;
 
     // configure the pin, but don't attach interrupt yet. This is done when going to sleep
     pinMode(SQW_PIN, INPUT_PULLUP);
 
+}
+
+void go_to_sleep() {
     // set alarm 1 for 20 seconds after every minute
     RTC.setAlarm(ALM1_MATCH_SECONDS, 20, 0, 0, 1);    // daydate parameter should be between 1 and 7
 //    RTC.setAlarm(ALM1_EVERY_SECOND, 20, 0, 0, 1);    // daydate parameter should be between 1 and 7
     RTC.alarm(ALARM_1);                     // ensure RTC interrupt flag is cleared
     RTC.alarmInterrupt(ALARM_1, true);
-}
-
-void go_to_sleep() {
-//    digitalWrite(13, LOW);
-//    delay(1000);
     attachInterrupt(INT0, wake_up, LOW);
     set_sleep_mode(SLEEP_MODE_PWR_DOWN);
     RTC.alarm(ALARM_1);

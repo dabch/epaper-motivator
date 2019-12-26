@@ -21,7 +21,8 @@ void clearBuffer() {
 
 
 void display_stream(char *str) {
-    display.setTextColor(EPD_RED);
+    clearBuffer();
+    display.setTextColor(EPD_BLACK);
     display.setTextWrap(true);
     display.setTextSize(2);
     
@@ -33,7 +34,7 @@ void display_stream(char *str) {
     int8_t current_char = 0;
 
     char *ptr = str;
-    Serial.println(sizeof(*ptr));
+    //Serial.println(sizeof(*ptr));
     char *align_begin;
     char *align_end;
     char align_mode = CTR_LEFTALIGN;
@@ -41,9 +42,9 @@ void display_stream(char *str) {
     int16_t controls;
 
     while(*ptr) {
-        Serial.print(*ptr, HEX);
-        Serial.print(" mode ");
-        Serial.println(align_mode, HEX);
+        //Serial.print(*ptr, HEX);
+        //Serial.print(" mode ");
+        //Serial.println(align_mode, HEX);
         switch(align_mode) {
             case CTR_LEFTALIGN:
                 if(*ptr == '\n') {
@@ -51,18 +52,18 @@ void display_stream(char *str) {
                     int16_t y = MARGIN_TOP + ++current_line * LINE_DIST;
                     display.setCursor(x, y);
                 } else if(*ptr == CTR_BLACK) {
-                    Serial.println("BLACK");
+                    //Serial.println("BLACK");
                     display.setTextColor(EPD_BLACK); 
                 } else if(*ptr == CTR_RED) {
-                    Serial.println("RED");
+                    //Serial.println("RED");
                     display.setTextColor(EPD_RED); 
                 } else if(*ptr == CTR_RIGHTALIGN) {
-                    Serial.println("beginning to right align");
+                    //Serial.println("beginning to right align");
                     align_begin = ptr + 1; // inclusive!  
                     align_mode = CTR_RIGHTALIGN;
                     controls = 0;
                 } else if(*ptr == CTR_CENTERALIGN) {
-                    Serial.println("beginning to center align");
+                    //Serial.println("beginning to center align");
                     align_begin = ptr + 1; // inclusive!  
                     align_mode = CTR_CENTERALIGN;
                     controls = 0;
@@ -73,17 +74,17 @@ void display_stream(char *str) {
                 break;
             case CTR_RIGHTALIGN:
                 if(*ptr == '\n') {
-                    Serial.println("Rightalign newline not supported!");
+                    //Serial.println("Rightalign newline not supported!");
                 } else if(*ptr == CTR_BLACK || *ptr == CTR_RED) {
                     controls++;
                 } else if(*ptr == CTR_LEFTALIGN) {
-                    Serial.println("end found");
+                    //Serial.println("end found");
                     align_end = ptr;
-                    Serial << "difference: " << ptr - align_begin -1 << endl;
-                    Serial << "count: " << (ptr - align_begin) << endl;
+                    //Serial << "difference: " << ptr - align_begin -1 << endl;
+                    //Serial << "count: " << (ptr - align_begin) << endl;
                     int16_t x = WIDTH - MARGIN_LEFT - CHAR_WIDTH * (ptr - align_begin - controls);
                     int16_t y = MARGIN_TOP + current_line * LINE_DIST;
-                    Serial << x << " - " << y << endl;
+                    //Serial << x << " - " << y << endl;
                     display.setCursor(x, y);
                     ptr = align_begin;
                     align_mode = CTR_ALIGN_EXECUTE;
@@ -93,17 +94,17 @@ void display_stream(char *str) {
                 break;
             case CTR_CENTERALIGN:
                 if(*ptr == '\n') {
-                    Serial.println("Center align newline not supported!");
+                    //Serial.println("Center align newline not supported!");
                 } else if(*ptr == CTR_BLACK || *ptr == CTR_RED) {
                     controls++;
                 } else if(*ptr == CTR_LEFTALIGN) {
-                    Serial.println("end found");
+                    //Serial.println("end found");
                     align_end = ptr;
-                    Serial << "difference: " << ptr - align_begin -1 << endl;
-                    Serial << "count: " << (ptr - align_begin) << endl;
+                    //Serial << "difference: " << ptr - align_begin -1 << endl;
+                    //Serial << "count: " << (ptr - align_begin) << endl;
                     int16_t x = (WIDTH - CHAR_WIDTH * (ptr - align_begin - controls)) / 2;
                     int16_t y = MARGIN_TOP + current_line * LINE_DIST;
-                    Serial << x << " - " << y << endl;
+                    //Serial << x << " - " << y << endl;
                     display.setCursor(x, y);
                     ptr = align_begin;
                     align_mode = CTR_ALIGN_EXECUTE;
@@ -125,8 +126,8 @@ void display_stream(char *str) {
                 ptr++;
                 break;
             default:
-                Serial.print(align_mode, HEX);
-                Serial.println(": invalid case triggered");
+                //Serial.print(align_mode, HEX);
+                //Serial.println(": invalid case triggered");
                 break;
         }
     }
