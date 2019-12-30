@@ -38,15 +38,27 @@ void setup()
 }
 
 void loop() {
-    show_compliment(compliment_id++ % COMPLIMENT_COUNT); 
+    char *ptr = check_special_day();
+    if(!ptr)
+        ptr = compliments_shuffled[compliment_id++ % COMPLIMENT_COUNT];
+
+    show_compliment(ptr); 
     Serial << "going to sleep" << endl;
     go_to_sleep();
     Serial << "woke up" << endl;
 
 }
 
-void show_compliment(int16_t id) {
+char *check_special_day() {
+    for(int16_t i = 0; i < SPECIAL_DAY_COUNT; i++) {
+        if(special_days[i].month == month() && special_days[i].day_of_month == day())
+            return special_days[i].compliment;
+    }
+    return NULL;
+}
+
+void show_compliment(char *ptr) {
     char buf[256];
-    strcpy_P(buf, compliments_shuffled[id]);
+    strcpy_P(buf, ptr);
     display_stream(buf);
 }
