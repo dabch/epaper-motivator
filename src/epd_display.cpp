@@ -43,9 +43,9 @@ void display_stream(char *str) {
     int16_t controls;
 
     while(*ptr) {
-        //Serial.print(*ptr, HEX);
-        //Serial.print(" mode ");
-        //Serial.println(align_mode, HEX);
+        Serial.print(*ptr, HEX);
+        Serial.print(" mode ");
+        Serial.println(align_mode, HEX);
         switch(align_mode) {
             case CTR_LEFTALIGN:
                 if(*ptr == '\n') {

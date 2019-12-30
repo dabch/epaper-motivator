@@ -14,6 +14,9 @@ const char O_UMLAUT = 0x94;
 const char A_UMLAUT_CAP = 0x8e;
 const char U_UMLAUT_CAP = 0x9a;
 const char O_UMLAUT_CAP = 0x99;
+const char S_UMLAUT = 0;
+
+/*
 
 const char c0[] PROGMEM = "Du bist die Geilste!!";
 const char c1[] PROGMEM = "Obi halts Maul!\n\x03(Ehsan M.)\x04";
@@ -27,12 +30,18 @@ const char *const compliments_progmem[] = {c0, c1, c2, c3, c4, c5, c6};
 
 const int COMPLIMENT_COUNT = 7;
 
+*/
+#include "bare_compliments.h"
+
 const char merry_xmas[] PROGMEM = "\x05\n\n\nFrohe Weihnachten!\x04";
-const char happy_ccc[] PROGMEM = "\x05\n\nHappy \x02""CCC\x01!\x04";
+const char guten_rutsch[] PROGMEM = "\n\x05\x02Guten Rutsch!\n\x01(aber nimm's\nnicht zu\nw\x94rtlich! ;) )\x04";
+const char happy_new_year[] PROGMEM = "\x05\x02\n\nFrohes neues Jahr!\x04";
 
 const day_t special_days[] = {
     {24, 12, merry_xmas},
-    {30, 12, happy_ccc},
+    {31, 12, guten_rutsch},
+    {1, 1, happy_new_year},
+    {30, 12, happy_new_year},
 };
 
 const int SPECIAL_DAY_COUNT = 2;

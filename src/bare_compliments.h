@@ -1,43 +1,65 @@
 // ---------------- BEGIN GENERATED COMPLIMENTS -------------
 // line length: 17
 // ---------------- - - - - - - - - - - - - - - -------------
-const char c0_0[] PROGMEM = "0123456789abcdef0";
-const char c0_1[] PROGMEM = "123456789abcdef01";
-const char c0_2[] PROGMEM = "23456789abcdef012";
-const char c0_3[] PROGMEM = "3456789abcdef0123";
-const char c0_4[] PROGMEM = "456789abcdef12345";
-const char c0_5[] PROGMEM = "6789abcdef";
-const char* const c0a[] = {c0_0, c0_1, c0_2, c0_3, c0_4, c0_5};
-
-const char c1_0[] PROGMEM = "Hallo Lea wie";
-const char c1_1[] PROGMEM = "gehts dir? :)";
-const char* const c1a[] = {c1_0, c1_1};
-
-const char c2_0[] PROGMEM = "Lookin' gorgeous";
-const char c2_1[] PROGMEM = "today!";
-const char* const c2a[] = {c2_0, c2_1};
-
-const char c3_0[] PROGMEM = "Guten Morgen!";
-const char* const c3a[] = {c3_0};
-
-const char c4_0[] PROGMEM = "Obi halts Maul";
-const char c4_1[] PROGMEM = "(zit. Ehsan";
-const char c4_2[] PROGMEM = "[sic!])";
-const char* const c4a[] = {c4_0, c4_1, c4_2};
-
-const char c5_0[] PROGMEM = "ddddddddddddddddd";
-const char c5_1[] PROGMEM = "ddddddddddddddddd";
-const char c5_2[] PROGMEM = "dddddd:w";
-const char* const c5a[] = {c5_0, c5_1, c5_2};
-
-const char c6_0[] PROGMEM = "Obi sagte schon";
-const char c6_1[] PROGMEM = "immer BAAAAAAAAAA";
-const char c6_2[] PROGMEM = "AAAAAAAAAAAAAAAAA";
-const char c6_3[] PROGMEM = "AAAAAAAAAAAAAAAAA";
-const char c6_4[] PROGMEM = "AAAAAAAAAAAAAAAAA";
-const char c6_5[] PROGMEM = "AAAA";
-const char* const c6a[] = {c6_0, c6_1, c6_2, c6_3, c6_4, c6_5};
-
-const compliment_t compliment_table[] = {{6, c0a}, {2, c1a}, {2, c2a}, {1, c3a}, {3, c4a}, {3, c5a}, {6, c6a}};
-const int COMPLIMENT_COUNT = 7;
-// ---------------- END GENERATED COMPLIMENTS -------------
+const char c0[] PROGMEM = "\x05""\n\nDu siehst gut\naus!\x04";
+const char c1[] PROGMEM = "\x05""\nImmer du selbst\nbleiben, sonst\nfehlt was!\x04";
+const char c2[] PROGMEM = "\x05""\n\nDu bist die\nGeilste!\x04";
+const char c3[] PROGMEM = "\x05""\n\nFreshen Hut hast\ndu da!\x04";
+const char c4[] PROGMEM = "\x05""\n\nGeiler Arsch!\n(Michael H.)\x04";
+const char c5[] PROGMEM = "\x05""\nFesches Madl\nhomma do! (ins\nbayr. v. Daniel\nB.)\x04";
+const char c6[] PROGMEM = "\x05""\nLehramt ist kein\nStudium (Johannes\nO.)\x04";
+const char c7[] PROGMEM = "\x05""\nFrauen schl\x84""gt\nman nur wenn sie\ndanach fragen\n(Lea U.)\x04";
+const char c8[] PROGMEM = "\x05""Wieso\nwissenschaftlich\narbeiten? Ist\ndoch ein Bachelor\nof Arts?!\n(Johannes U.)\x04";
+const char c9[] PROGMEM = "\x05""\nKann man schon\nessen. (Johannes\nO.)\x04";
+const char c10[] PROGMEM = "\x05""\nWir haten nur\nMenschen, die wir\nm\x94""gen. (Daniel B.\n& Johannes O.)\x04";
+const char c11[] PROGMEM = "\x05""Nicht\nprokrastinieren,\nLea! Arbeiten!\n(die f\x81""r den\nErfolg deiner BA\nVerantwortlichen)\x04";
+const char c12[] PROGMEM = "\x05""\nHeute koch ich\nmal nur f\x81""r eine\nPerson! (Lea U.)\x04";
+const char c13[] PROGMEM = "\x05""Wer kann schon\nhumanoide\nRobotik,\nGendertheorie und\nShakespeare so\ngut verbinden?\x04";
+const char c14[] PROGMEM = "\x05""Mama wann kommst\ndu zur\x81""ck? Die\nKleinfamilie\nhungert schon\nohne dich!\x04";
+const char c15[] PROGMEM = "\x05""\nHab einen\nwundersch\x94""nen\nTag!\x04";
+const char c16[] PROGMEM = "\x05""Deine Eltern\nm\x81""ssen\nTerroristen sein,\ndenn du bist eine\nBombe!\x04";
+const char c17[] PROGMEM = "\x05""\nTat es weh, als\ndu vom Himmel\ngefallen bist?\x04";
+const char c18[] PROGMEM = "\x05""\n\nHey, sexy!\x04";
+const char c19[] PROGMEM = "\x05""\n\nDu schaust heute\naber gut aus!\x04";
+const char c20[] PROGMEM = "\x05""\nSo ausgeschlafen\nhab ich dich\nschon lang nicht\nmehr gesehen!\x04";
+const char c21[] PROGMEM = "\x05""\n\nHello,\nBeautyqueen!\x04";
+const char c22[] PROGMEM = "\x05""\nDu bringst heute\njemanden zum\nL\x84""cheln. Ich wei\xe0""\nes.\x04";
+const char c23[] PROGMEM = "\x05""\nOhne dich w\x84""re\ndieser Tag nur\nhalb so toll!\x04";
+const char c24[] PROGMEM = "\x05""\nEngel kann man\nnicht sehen, aber\nman kann ihnen\nbegegnen.\x04";
+const char c25[] PROGMEM = "\x05""\nIch habe\nnachgemessen. Du\nbist gro\xe0""artig!\x04";
+const char c26[] PROGMEM = "\x05""\nWie f\x81""hlt es sich\nan, wenn man die\nsch\x94""nste Frau im\nRaum ist?\x04";
+const char c27[] PROGMEM = "\x05""Wer braucht\nmorgens schon\nKaffee, wenn er\ndein L\x84""cheln\nhaben kann?\x04";
+const char c28[] PROGMEM = "\x05""\n\nDu bist s\x81""\xe0""er als\nSchokolade!\x04";
+const char c29[] PROGMEM = "\x05""Bei vielen\nMenschen l\x84""chelt\nnur mein Mund.\nBei Dir lacht\nmein Herz.\x04";
+const char c30[] PROGMEM = "\x05""Ein Tag mit DIR\nist wie eine\nBadewanne voll\nChampagner. (ein\nAlkoholiker)\x04";
+const char c31[] PROGMEM = "\x05""\nHabe ich Zucker\nin den Augen oder\nwarum bist du so\ns\x81""\xe0""?\x04";
+const char c32[] PROGMEM = "\x05""Du wirst von Tag\nzu Tag h\x81""bscher\nund siehst heute\nschon aus wie\nn\x84""chste Woche.\x04";
+const char c33[] PROGMEM = "\x05""\nDu bist ein\nGeschenk an die\nWelt!\x04";
+const char c34[] PROGMEM = "\x05""\nSo wie du\nstrahlst, da ist\nselbst Fukushima\nneidisch!\x04";
+const char c35[] PROGMEM = "\x05""\nDu strahlst wie\ndie Sonne an den\nbesten\nSommertagen!\x04";
+const char c36[] PROGMEM = "\x05""\nEin Tag ohne dich\nist ein\nverlorener Tag.\x04";
+const char c37[] PROGMEM = "\x05""\nDu kannst Berge\nversetzen - du\nmusst es nur\nwollen.\x04";
+const char c38[] PROGMEM = "\x05""ich bin einsam,\ndu bist einsam.\nDarf ich dich\neinsamen?\n(anonym)\x04";
+const char c39[] PROGMEM = "\x05""Ist dein Vater\nein Dieb? Er hat\ndie Sterne vom\nHimmel gestohlen\nund in deine\nAugen getan.\x04";
+const char c40[] PROGMEM = "\x05""\nIst es hier\nwirklich so hei\xe0"",\noder liegt es an\ndir?\x04";
+const char c41[] PROGMEM = "\x05""\nIch dachte immer\nEngel gibt es nur\nim Himmel?\x04";
+const char c42[] PROGMEM = "\x05""\nDeine Augen\ngl\x84""nzen wie\nDiamanten!\x04";
+const char c43[] PROGMEM = "\x05""\n\nDu siehst heute\ntoll aus\x04";
+const char c44[] PROGMEM = "\x05""\nWelches\nKompliment kannst\ndu gar nicht mehr\nh\x94""ren?\x04";
+const char c45[] PROGMEM = "\x05""\n\nIch mag deine\nHaare heute!\x04";
+const char c46[] PROGMEM = "\x05""\nWenn du eine\nKartoffel w\x84""rst,\nw\x84""rst du eine\nS\x81""sskartoffel.\x04";
+const char c47[] PROGMEM = "\x05""Mir ist\naufgefallen, dass\ndir aufgefallen\nist, dass du mir\naufgefallen bist.\x04";
+const char c48[] PROGMEM = "\x05""\nIch hab mich\numgesehn, du bist\ndie h\x81""bscheste\nFrau hier.\x04";
+const char c49[] PROGMEM = "\x05""Du hast das\nsch\x94""nste L\x84""cheln,\ndas ich in den\nletzten drei\nMinuten gesehen\nhabe.\x04";
+const char c50[] PROGMEM = "\x05""Du musst der\nwahre Grund f\x81""r\ndie globale\nErderw\x84""rmung\nsein.\x04";
+const char c51[] PROGMEM = "\x05""\nEs gibt genug\nWunder, doch du\n\x81""bertriffst sie\nalle.\x04";
+const char c52[] PROGMEM = "\x05""M\x84""nner d\x81""rfena\nauch mal das\nletzte Wort\nhaben, solange es\nein Kompliment\nist.\x04";
+const char c53[] PROGMEM = "\x05""Frauen\nKomplimente zu\nmachen ist wie\nTopfschlagen im\nMinenfeld\x04";
+const char c54[] PROGMEM = "\x05""\nGeschichten enden\nmit einem Happy\nEnd, Legenden mit\nDir.\x04";
+const char c55[] PROGMEM = "\x05""\nWenn ich der\nFrosch bin,\nm\x94""chtest Du meine\nPrinzessin sein?\x04";
+const char c56[] PROGMEM = "\x05""Bist du eine\nHexe? Du zauberst\nmir n\x84""mlich ein\nL\x84""cheln aufs\nGesicht!\x04";
+const char c57[] PROGMEM = "\x05""\nIch liebe es, dir\nnachts beim\nSchnarchen\nzuzuh\x94""ren!\x04";
+const char c58[] PROGMEM = "\x05""Du bist nicht nur\nder Hammer,\nsondern ein\nganzer\nWerkzeugkasten!\x04";
+const char c59[] PROGMEM = "\x05""\nMan kann ja\nnichts daf\x81""r,\nwenn man dumm\nist. (Lea U.)\x04";
+const char *const compliments_progmem[] = {c0, c1, c2, c3, c4, c5, c6, c7, c8, c9, c10, c11, c12, c13, c14, c15, c16, c17, c18, c19, c20, c21, c22, c23, c24, c25, c26, c27, c28, c29, c30, c31, c32, c33, c34, c35, c36, c37, c38, c39, c40, c41, c42, c43, c44, c45, c46, c47, c48, c49, c50, c51, c52, c53, c54, c55, c56, c57, c58, c59};
+const int COMPLIMENT_COUNT = 60;

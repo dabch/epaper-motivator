@@ -11,7 +11,7 @@
 int compliment_index = 0;
 
 char *compliments_shuffled[COMPLIMENT_COUNT];
-int16_t compliment_id = 6;
+int16_t compliment_id = 29;
 
 void setup()
 {
