@@ -11,7 +11,7 @@
 int compliment_index = 0;
 
 char *compliments_shuffled[COMPLIMENT_COUNT];
-int16_t compliment_id = 0;
+int16_t compliment_id = 6;
 
 void setup()
 {
@@ -25,7 +25,7 @@ void setup()
 
     // shuffle our compliment list
     memcpy(compliments_shuffled, compliments_progmem, COMPLIMENT_COUNT * sizeof(char *));
-    shuffle_ptr_array(compliments_shuffled, COMPLIMENT_COUNT);
+    //shuffle_ptr_array(compliments_shuffled, COMPLIMENT_COUNT);
 
     for(int i = 0; i < COMPLIMENT_COUNT; i++) {
         char buf[256];

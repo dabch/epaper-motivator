@@ -24,8 +24,8 @@ const char CTR_ALIGN_EXECUTE = 0x06;
 #define WIDTH 212
 #define HEIGHT 104
 #define MARGIN_TOP 5
-#define MARGIN_LEFT 0
-//#define MARGIN_LEFT 4
+//#define MARGIN_LEFT 0
+#define MARGIN_LEFT 4
 #define CHAR_HEIGHT 14
 #define CHAR_WIDTH 12
 #define LINE_SPACING 2
