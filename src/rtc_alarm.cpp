@@ -32,8 +32,8 @@ void init_rtc() {
 
 void go_to_sleep() {
     // set alarm 1 for 20 seconds after every minute
-    RTC.setAlarm(ALM1_MATCH_SECONDS, 20, 0, 0, 1);    // daydate parameter should be between 1 and 7
-//    RTC.setAlarm(ALM1_EVERY_SECOND, 20, 0, 0, 1);    // daydate parameter should be between 1 and 7
+    RTC.setAlarm(ALM1_MATCH_HOURS, 0, 30, 3, 1);    // daydate parameter should be between 1 and 7
+    //RTC.setAlarm(ALM1_MATCH_SECONDS, 0, 30, 3, 1);    // daydate parameter should be between 1 and 7
     RTC.alarm(ALARM_1);                     // ensure RTC interrupt flag is cleared
     RTC.alarmInterrupt(ALARM_1, true);
     attachInterrupt(INT0, wake_up, LOW);

@@ -28,7 +28,7 @@ void display_stream(char *str) {
     
     display.setCursor(MARGIN_LEFT, MARGIN_TOP);
 
-    Serial.println("printing via display_stream()");
+    //Serial.println("printing via display_stream()");
 
     int8_t current_line = 0;
     int8_t current_char = 0;
@@ -43,9 +43,9 @@ void display_stream(char *str) {
     int16_t controls;
 
     while(*ptr) {
-        Serial.print(*ptr, HEX);
-        Serial.print(" mode ");
-        Serial.println(align_mode, HEX);
+        //Serial.print(*ptr, HEX);
+        //Serial.print(" mode ");
+        //Serial.println(align_mode, HEX);
         switch(align_mode) {
             case CTR_LEFTALIGN:
                 if(*ptr == '\n') {
@@ -53,18 +53,18 @@ void display_stream(char *str) {
                     int16_t y = MARGIN_TOP + ++current_line * LINE_DIST;
                     display.setCursor(x, y);
                 } else if(*ptr == CTR_BLACK) {
-                    Serial.println("BLACK");
+                    //Serial.println("BLACK");
                     display.setTextColor(EPD_BLACK); 
                 } else if(*ptr == CTR_RED) {
-                    Serial.println("RED");
+                    //Serial.println("RED");
                     display.setTextColor(EPD_RED); 
                 } else if(*ptr == CTR_RIGHTALIGN) {
-                    Serial.println("beginning to right align");
+                    //Serial.println("beginning to right align");
                     align_begin = ptr + 1; // inclusive!  
                     align_mode = CTR_RIGHTALIGN;
                     controls = 0;
                 } else if(*ptr == CTR_CENTERALIGN) {
-                    Serial.println("beginning to center align");
+                    //Serial.println("beginning to center align");
                     align_begin = ptr + 1; // inclusive!  
                     align_mode = CTR_CENTERALIGN;
                     controls = 0;
@@ -77,14 +77,14 @@ void display_stream(char *str) {
                 if(*ptr == CTR_BLACK || *ptr == CTR_RED) {
                     controls++;
                 } else if(*ptr == CTR_LEFTALIGN || *ptr == '\n') {
-                    Serial.println("end found");
+                    //Serial.println("end found");
                     saved_align_mode = CTR_RIGHTALIGN;
                     align_end = ptr;
-                    Serial << "difference: " << ptr - align_begin -1 << endl;
-                    Serial << "count: " << (ptr - align_begin) << endl;
+                    //Serial << "difference: " << ptr - align_begin -1 << endl;
+                    //Serial << "count: " << (ptr - align_begin) << endl;
                     int16_t x = WIDTH - MARGIN_LEFT - CHAR_WIDTH * (ptr - align_begin - controls);
                     int16_t y = MARGIN_TOP + current_line * LINE_DIST;
-                    Serial << x << " - " << y << endl;
+                    //Serial << x << " - " << y << endl;
                     display.setCursor(x, y);
                     ptr = align_begin;
                     align_mode = CTR_ALIGN_EXECUTE;
@@ -96,14 +96,14 @@ void display_stream(char *str) {
                 if(*ptr == CTR_BLACK || *ptr == CTR_RED) {
                     controls++;
                 } else if(*ptr == CTR_LEFTALIGN || *ptr == '\n') {
-                    Serial.println("end found");
+                    //Serial.println("end found");
                     saved_align_mode = CTR_CENTERALIGN;
                     align_end = ptr;
-                    Serial << "difference: " << ptr - align_begin -1 << endl;
-                    Serial << "count: " << (ptr - align_begin) << endl;
+                    //Serial << "difference: " << ptr - align_begin -1 << endl;
+                    //Serial << "count: " << (ptr - align_begin) << endl;
                     int16_t x = (WIDTH - CHAR_WIDTH * (ptr - align_begin - controls)) / 2;
                     int16_t y = MARGIN_TOP + current_line * LINE_DIST;
-                    Serial << x << " - " << y << endl;
+                    //Serial << x << " - " << y << endl;
                     display.setCursor(x, y);
                     ptr = align_begin;
                     align_mode = CTR_ALIGN_EXECUTE;
@@ -137,7 +137,7 @@ void display_stream(char *str) {
                 break;
         }
     }
-    Serial.println("printing via display_stream() done");
+    //Serial.println("printing via display_stream() done");
     display.display();
 }
 
