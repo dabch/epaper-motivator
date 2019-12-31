@@ -55,7 +55,7 @@ def main():
             elif len(words[0]) > line_len:
                 part_1 = words[0][:line_len - len(lines[line_idx]) - 1]
                 part_2 = words[0][line_len - len(lines[line_idx]) - 1:]
-                lines[line_idx] += part_1 + "- "
+                lines[line_idx] += part_1 + "-"
                 words = [part_2] + words[1:]
                 line_idx += 1
                 lines.append("")
