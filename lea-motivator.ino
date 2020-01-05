@@ -11,21 +11,27 @@
 int compliment_index = 0;
 
 char *compliments_shuffled[COMPLIMENT_COUNT];
-int16_t compliment_id = 55;
+int16_t compliment_id = 0;
 
 void setup()
 {
     Serial.begin(9600);
     
+    Serial << "init rtc... ";
     init_rtc();
+    Serial << "done." << endl << "init display... ";
     init_display();
+    Serial << "done." << endl;
 
     // seed the PRNG with unix time to get a different random sequence each reset
     srand(now());
 
     // shuffle our compliment list
+    Serial << "memcpying compliment list... ";
     memcpy(compliments_shuffled, compliments_progmem, COMPLIMENT_COUNT * sizeof(char *));
+    Serial << "done" << endl << "shuffling list.. ";
     shuffle_ptr_array(compliments_shuffled, COMPLIMENT_COUNT);
+    Serial << "init done.";
 
 /*    for(int i = 0; i < COMPLIMENT_COUNT; i++) {
         char buf[256];
@@ -35,9 +41,12 @@ void setup()
 }
 
 void loop() {
+    Serial << "beginning loop" << endl;
     char *ptr = check_special_day();
+    Serial << "special ptr: " << (ptr == NULL) << endl;
     if(!ptr)
         ptr = compliments_shuffled[compliment_id++ % COMPLIMENT_COUNT];
+
 
     show_compliment(ptr); 
     Serial << "going to sleep" << endl;
@@ -45,6 +54,7 @@ void loop() {
     Serial << "woke up" << endl;
 
     if(compliment_id >= COMPLIMENT_COUNT) {
+        Serial << "reshuffling ptr array" << endl;
         shuffle_ptr_array(compliments_shuffled, COMPLIMENT_COUNT);
         compliment_id = 0;
     }
@@ -62,5 +72,6 @@ char *check_special_day() {
 void show_compliment(char *ptr) {
     char buf[256];
     strcpy_P(buf, ptr);
+    Serial << "buffer: "<<  buf << endl;
     display_stream(buf);
 }

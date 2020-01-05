@@ -20,7 +20,7 @@ const char S_UMLAUT = 0;
 
 const char merry_xmas[] PROGMEM = "\x05\n\n\nFrohe Weihnachten!\x04";
 const char guten_rutsch[] PROGMEM = "\n\x05\x02Guten Rutsch!\n\x01(aber nimm's\nnicht zu\nw\x94rtlich!)\x04";
-const char happy_new_year[] PROGMEM = "\x05\x02\n\nFrohes neues Jahr!\x04";
+const char happy_new_year[] PROGMEM = "\x05\x02\n\nFrohes neues\nJahr!\x04";
 const char happy_birthday[] PROGMEM = "\x05""\x02""Alles gute zum\nGeburtstag!\x01\n\nBleib wie du bist\nund lass dich\nfeiern!\x04";
 
 const day_t special_days[] = {
@@ -28,9 +28,8 @@ const day_t special_days[] = {
     {24, 12, merry_xmas},
     {31, 12, guten_rutsch},
     {1, 1, happy_new_year},
-    {30, 12, happy_new_year},
 };
 
-const int SPECIAL_DAY_COUNT = 5;
+const int SPECIAL_DAY_COUNT = 4;
 
 #endif

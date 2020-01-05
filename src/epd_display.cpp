@@ -28,7 +28,7 @@ void display_stream(char *str) {
     
     display.setCursor(MARGIN_LEFT, MARGIN_TOP);
 
-    //Serial.println("printing via display_stream()");
+    Serial.println("printing via display_stream()");
 
     int8_t current_line = 0;
     int8_t current_char = 0;
